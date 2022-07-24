@@ -11,12 +11,13 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import static RetoSemana6.TipoEmpleado.*;
+import static RetoSemana6.EmpleadoBR.*;
 
 /**
  *
  * @author fmunoz
  */
-public class EmpleadoBRTest  {
+public class EmpleadoBRTest {
 
     public EmpleadoBRTest() {
     }
@@ -136,17 +137,18 @@ public class EmpleadoBRTest  {
         assertEquals(esperado, resultado, 0.0);
     }
 
-//    @Test
-//    public void testCalculaSalarioNeto9() {
-//        
-//        System.out.println("Prueba Calcula salario Neto 9");
-//        float salarioBruto =  -1;
-//        EmpleadoBR empleado = new EmpleadoBR();
-//        float esperado = (float) BRException;        
-//
-//        float resultado = empleado.calculaSalarioNeto(salarioBruto);
-//        assertEquals(esperado, resultado, 0.0);
-//    }
+    @Test(expected = BRException.class)
+    public void testCalculaSalarioNeto9() {
+
+        System.out.println("Prueba Calcula salario Neto 9");
+        float salarioBruto = -1;
+        EmpleadoBR empleado = new EmpleadoBR();
+        float esperado = 1232;
+
+        float resultado = empleado.calculaSalarioNeto(salarioBruto);
+        assertEquals(esperado, resultado, 0.0);
+    }
+
     /**
      * Test of calculaSalarioBruto method, of class EmpleadoBR.
      */
@@ -175,7 +177,7 @@ public class EmpleadoBRTest  {
         double resultado = empleado.calculaSalarioBruto(vendedor, ventasMes, horasExtras);
         assertEquals(esperado, resultado, 0.0);
     }
-    
+
     @Test
     public void testCalculaSalarioBruto3() {
         System.out.println("Prueba Calcula salario bruto 3");
@@ -188,23 +190,10 @@ public class EmpleadoBRTest  {
         double resultado = empleado.calculaSalarioBruto(vendedor, ventasMes, horasExtras);
         assertEquals(esperado, resultado, 0.0);
     }
-    
+
     @Test
     public void testCalculaSalarioBruto4() {
         System.out.println("Prueba Calcula salario bruto 4");
-
-        float ventasMes = (float) 1499.99;
-        float horasExtras = 0;
-        EmpleadoBR empleado = new EmpleadoBR();
-        float esperado = 1100;
-
-        double resultado = empleado.calculaSalarioBruto(vendedor, ventasMes, horasExtras);
-        assertEquals(esperado, resultado, 0.0);
-    }
-    
-    @Test
-    public void testCalculaSalarioBruto5() {
-        System.out.println("Prueba Calcula salario bruto 5");
 
         float ventasMes = 1250;
         float horasExtras = 8;
@@ -214,10 +203,10 @@ public class EmpleadoBRTest  {
         double resultado = empleado.calculaSalarioBruto(encargado, ventasMes, horasExtras);
         assertEquals(esperado, resultado, 0.0);
     }
-    
+
     @Test
-    public void testCalculaSalarioBruto6() {
-        System.out.println("Prueba Calcula salario bruto 6");
+    public void testCalculaSalarioBruto5() {
+        System.out.println("Prueba Calcula salario bruto 5");
 
         float ventasMes = 1000;
         float horasExtras = 0;
@@ -227,10 +216,10 @@ public class EmpleadoBRTest  {
         double resultado = empleado.calculaSalarioBruto(encargado, ventasMes, horasExtras);
         assertEquals(esperado, resultado, 0.0);
     }
-    
+
     @Test
-    public void testCalculaSalarioBruto7() {
-        System.out.println("Prueba Calcula salario bruto 7");
+    public void testCalculaSalarioBruto6() {
+        System.out.println("Prueba Calcula salario bruto 6");
 
         float ventasMes = (float) 999.99;
         float horasExtras = 3;
@@ -240,10 +229,10 @@ public class EmpleadoBRTest  {
         double resultado = empleado.calculaSalarioBruto(encargado, ventasMes, horasExtras);
         assertEquals(esperado, resultado, 0.0);
     }
-    
+
     @Test
-    public void testCalculaSalarioBruto8() {
-        System.out.println("Prueba Calcula salario bruto 8");
+    public void testCalculaSalarioBruto7() {
+        System.out.println("Prueba Calcula salario bruto 7");
 
         float ventasMes = 500;
         float horasExtras = 0;
@@ -253,74 +242,57 @@ public class EmpleadoBRTest  {
         double resultado = empleado.calculaSalarioBruto(encargado, ventasMes, horasExtras);
         assertEquals(esperado, resultado, 0.0);
     }
-    
+
     @Test
+    public void testCalculaSalarioBruto8() {
+        System.out.println("Prueba Calcula salario bruto 8");
+
+        float ventasMes = 0;
+        float horasExtras = 8;
+        EmpleadoBR empleado = new EmpleadoBR();
+        float esperado = 1660;
+
+        double resultado = empleado.calculaSalarioBruto(encargado, ventasMes, horasExtras);
+        assertEquals(esperado, resultado, 0.0);
+    }
+
+    @Test(expected = BRException.class)
     public void testCalculaSalarioBruto9() {
         System.out.println("Prueba Calcula salario bruto 9");
-
-        float ventasMes = 0;
-        float horasExtras = 8;
-        EmpleadoBR empleado = new EmpleadoBR();
-        float esperado = 1660;
-
-        double resultado = empleado.calculaSalarioBruto(encargado, ventasMes, horasExtras);
-        assertEquals(esperado, resultado, 0.0);
-    }
-    
-    
-    @Test
-    public void testCalculaSalarioBruto10() {
-        System.out.println("Prueba Calcula salario bruto 10");
-
-        float ventasMes = 0;
-        float horasExtras = 8;
-        EmpleadoBR empleado = new EmpleadoBR();
-        float esperado = 1660;
-
-        double resultado = empleado.calculaSalarioBruto(encargado, ventasMes, horasExtras);
-        assertEquals(esperado, resultado, 0.0);
-    }
-    
-    
-    @Test
-    public void testCalculaSalarioBruto11() {
-        System.out.println("Prueba Calcula salario bruto 11");
 
         float ventasMes = -1;
         float horasExtras = 8;
         EmpleadoBR empleado = new EmpleadoBR();
-        float esperado = BRException;
+        float esperado = 34234;
 
         double resultado = empleado.calculaSalarioBruto(vendedor, ventasMes, horasExtras);
         assertEquals(esperado, resultado, 0.0);
     }
-    
-    @Test
-    public void testCalculaSalarioBruto12() {
-        System.out.println("Prueba Calcula salario bruto 12");
 
-        float ventasMes = 1500;
-        float horasExtras = -1;
+    @Test(expected = BRException.class)
+    public void testCalculaSalarioBruto10() {
+        System.out.println("Prueba Calcula salario bruto 10");
+
+        float ventasMes = -1;
+        float horasExtras = 8;
         EmpleadoBR empleado = new EmpleadoBR();
-        float esperado = BRException;
+        float esperado = 34234;
 
         double resultado = empleado.calculaSalarioBruto(vendedor, ventasMes, horasExtras);
         assertEquals(esperado, resultado, 0.0);
     }
-    
-    @Test
-    public void testCalculaSalarioBruto13() {
-        System.out.println("Prueba Calcula salario bruto 13");
+
+    @Test(expected = BRException.class)
+    public void testCalculaSalarioBruto11() {
+        System.out.println("Prueba Calcula salario bruto 11");
+
         float ventasMes = 1500;
         float horasExtras = -1;
         EmpleadoBR empleado = new EmpleadoBR();
-        float esperado = BRException();
+        float esperado = 1231323;
 
-        double resultado = empleado.calculaSalarioBruto(null, ventasMes, horasExtras);
+        double resultado = empleado.calculaSalarioBruto(vendedor, ventasMes, horasExtras);
         assertEquals(esperado, resultado, 0.0);
     }
-    
-    
-
 
 }
